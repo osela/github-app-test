@@ -1,0 +1,4 @@
+name: a
+labels:
+- my-label
+resolver: local

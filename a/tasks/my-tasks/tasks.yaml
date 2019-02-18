@@ -1,0 +1,8 @@
+name: task1
+labels:
+- jjj
+modules:
+- build: build94
+  module: m1
+  labels:
+  - label1
