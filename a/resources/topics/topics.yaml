@@ -1,6 +1,6 @@
 name: audit-topic2
 labels:
-- important
+  important: true
 ---
 
 name: credit-topic1

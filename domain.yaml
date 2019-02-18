@@ -1,4 +1,4 @@
 name: dev
 labels:
-- label1
-- label2
+  label1: meo
+  label2: bla

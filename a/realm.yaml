@@ -1,4 +1,4 @@
 name: a
 labels:
-- my-label
+  my-label: hello
 resolver: local
