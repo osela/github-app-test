@@ -6,3 +6,7 @@ modules:
   module: m1
   labels:
     label1: true
+- build: build95
+  module: m3
+  labels:
+    label2: aaa
