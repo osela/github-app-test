@@ -2,11 +2,11 @@ name: task1
 labels:
   jjj: true
 modules:
-- build: build98
+- build: build99
   module: m1
   labels:
     label1: true
-- build: build98
+- build: build99
   module: m3
   labels:
     label2: aaa
