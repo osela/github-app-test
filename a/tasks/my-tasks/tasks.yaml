@@ -18,4 +18,3 @@ modules:
         match_labels:
           bla: aaa
         resolver: local
-}
