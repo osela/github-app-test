@@ -10,3 +10,12 @@ modules:
   module: m3
   labels:
     label2: aaa
+  dependency_management:
+    dynamic:
+      add_selection:
+      - catalog: alice
+        target_kind: api
+        match_labels:
+          bla: aaa
+        resolver: local
+}
