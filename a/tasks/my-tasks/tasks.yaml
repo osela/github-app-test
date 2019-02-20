@@ -2,11 +2,19 @@ name: task1
 labels:
   jjj: true
 modules:
-- build: build97
+- build: build100
   module: m1
   labels:
     label1: true
-- build: build97
+- build: build100
   module: m3
   labels:
     label2: aaa
+  dependency_management:
+    dynamic:
+      add_selection:
+      - catalog: alice
+        target_kind: api
+        match_labels:
+          bla: aaa
+        resolver: local
