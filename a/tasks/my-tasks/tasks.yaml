@@ -3,18 +3,10 @@ labels:
   jjj: true
 modules:
 - build: build100
-  module: m1
+  module: m3
   labels:
     label1: true
-- build: build100
+- build: build101
   module: m3
   labels:
     label2: aaa
-  dependency_management:
-    dynamic:
-      add_selection:
-      - catalog: alice
-        target_kind: api
-        match_labels:
-          bla: aaa
-        resolver: local
