@@ -1,6 +1,3 @@
-name: audit-topic2
+name: credit-events-v2
 labels:
   important: true
----
-
-name: credit-topic1
