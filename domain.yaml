@@ -14,11 +14,13 @@ infrastructure:
       replicas: 3
       instanceSize: small
       storageSize: small
+      storagePolicy: retain
       storageTombstone: false
       version: 2.1.0
     zooKeeper:
       replicas: 3
       instanceSize: small
       storageSize: small
+      storagePolicy: retain
       storageTombstone: false
       version: 3.9.0
