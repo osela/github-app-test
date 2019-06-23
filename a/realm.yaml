@@ -1,4 +1,0 @@
-name: a
-labels:
-  my-label: hello
-resolver: local
