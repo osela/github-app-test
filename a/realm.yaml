@@ -2,6 +2,7 @@ name: a
 labels:
   my-label: hello
   my-label2: hello2
+  my-label3: hello3
 resolver: local
 infrastructure:
   kafkaCluster:
