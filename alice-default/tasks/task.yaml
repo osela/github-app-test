@@ -1,0 +1,11 @@
+name: audit-server
+replicas: 2
+modules:
+- build: okro-samples-alice-audit-914f6820-0adb0296
+  module: server
+- build: okro-samples-alice-audit-gateway-c3f4e10b-0adb0296
+  module: gateway
+  dep:
+    addSelection:
+    - targetKind: api
+      resolver: task
