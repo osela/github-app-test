@@ -1,0 +1,29 @@
+name: cassandra.rules
+rules:
+- alert: CassandraHintsCount
+  annotations:
+    recipients: platform
+    message: Cassandra hints count for {{ $labels.cache }} has changed on {{ $labels.cassandra_cluster }} ({{ $labels.cassandra_node }}) - some cassandra nodes may go down.
+    runbook_path: /env/base-managed/cassandra/runbook/CassandraHintsCount.md
+  expr: changes(cassandra_cache_hits_total[1m]) > 3
+  for: 5m
+  labels:
+    severity: critical
+- alert: CassandraCompactionTaskPending
+  annotations:
+    recipients: platform
+    message: '{{ $value }} Cassandra compaction tasks are pending for {{ $labels.keyspace }}/{{ $labels.table }} on {{ $labels.cassandra_cluster }} ({{ $labels.cassandra_node }}) cassandra node.'
+    runbook_path: /env/base-managed/cassandra/runbook/CassandraCompactionTaskPending.md
+  expr: avg_over_time(cassandra_table_estimated_pending_compactions[30m]) > 100
+  for: 5m
+  labels:
+    severity: warning
+- alert: CassandraViewwriteLatency
+  annotations:
+    recipients: platform
+    message: High ({{ $value }})s viewwrite latency on {{ $labels.cassandra_cluster }} ({{ $labels.cassandra_node }}) cassandra node.
+    runbook_path: /env/base-managed/cassandra/runbook/CassandraViewwriteLatency.md
+  expr: cassandra_client_request_latency_seconds{operation="viewwrite",quantile="0.99"} > 0.1
+  for: 5m
+  labels:
+    severity: warning
